@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --fs-body: 1.6rem;
+
+  --hsl: 260;
+  --bg-body: hsl(var(--hsl), 19%, 6%);
+  --bg-player: hsl(var(--hsl), 33%, 19%);
+
+  --ff-body: 'Roboto', sans-serif;
+}
+
+body {
+  background: var(--bg-body);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+}
+
+.page {
+  width: 1037px;
+  height: 631px;
+  margin: 66px auto;
+  display: flex;
+}
+
+main {
+  width: 65.619rem;
+
+  margin: auto;
+
+  display: grid;
+  gap: 3.2rem;
+  align-content: center;
+  grid-template-columns: 26.6rem 1fr 35.71rem 1fr; 
+  grid-template-areas: 
+    'PlayerOne PlayerTwo'
+    'PlayerOne PlayerThree';
+}
+
+.playerOne {
+  grid-area: PlayerOne;
+
+  width: 266px;
+  height: 498px;
+  background: var(--bg-player);
+
+  padding: 50px 38px; 
+
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.9rem;
+
+  transition: 300ms;
+}
+
+.playerOne:hover {
+  transform: scale(1.1);
+}
+
+h1 {
+  font-weight: 700;
+  color: #E1E1E6;
+  font-size: 2.4rem;
+  line-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.96rem;
+}
+
+h1 span {
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 100%;
+  color: #8e8e90;
+}
+
+.control {
+  width: 18.9rem;
+  height: 2.8rem;
+}
+
+.progress {
+  width: 18.9rem;
+  height: 0.6rem;
+}
+
+.time-progress {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 160%;
+  color: #8e8e90;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 18.9rem;
+  height: 2.3rem;
+
+  margin-top: -2rem;
+}
+
+.playerTwo {
+  grid-area: PlayerTwo;
+
+  width: 35.7rem;
+  height: 26.6rem;
+  background: var(--bg-player);
+
+  padding: 2.9rem;
+
+  border-radius: 0.9rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.881rem;
+
+  margin: auto;
+
+  transition: 300ms;
+}
+
+.playerTwo:hover {
+  transform: scale(1.1);
+}
+
+.playerTwo header {
+  display: flex;
+  align-items: center;
+  gap: 2.881rem;
+}
+
+.playerTwo img:nth-child(1 ) {
+  width: 8.4rem;
+  height: 8.4rem;
+}
+
+.playerTwo .progress {
+  width: 30rem;
+  height: 0.6rem;
+}
+
+.playerTwo .time-progress{
+  width: 30rem;
+}
+
+.playerThree {
+  grid-area: PlayerThree;
+
+  width: 35.7rem;
+  height: 18.9rem;
+  background: var(--bg-player);
+
+  padding: 2.9rem;
+
+  border-radius: 0.9rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.881rem;
+
+  margin: auto;
+
+  transition: 300ms;
+}
+
+.playerThree:hover {
+  transform: scale(1.1);
+}
+
+.playerThree header {
+  display: flex;
+  align-items: center;
+  gap: 2.881rem;
+}
+
+.playerThree img:nth-child(1 ) {
+  width: 8.4rem;
+  height: 8.4rem;
+}
