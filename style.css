@@ -197,3 +197,34 @@ header img {
     opacity: 1;
   }
 }
+
+@keyframes leftForRight {
+  0% {
+    transform: translateX(-50rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media(max-width: 700px) {
+  main {
+    flex-direction: column;
+
+    margin-top: 2rem;
+  }
+
+  .playerOne {
+    animation: topDown 0.5s;
+  }
+
+  .playerTwo {
+    animation: leftForRight 0.5s;
+  }
+
+  .playerThree {
+    margin-bottom: 2rem;
+  }
+}
