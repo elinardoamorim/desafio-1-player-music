@@ -97,6 +97,10 @@ h2 {
   margin-top: 0.96rem;
 }
 
+.stop-music {
+  display: none;
+}
+
 .cards-player {
   display: flex;
   flex-direction: column;
