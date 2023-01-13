@@ -6,7 +6,6 @@
 
 :root {
   font-size: 62.5%;
-  --fs-body: 1.6rem;
 
   --hsl: 260;
   --bg-body: hsl(var(--hsl), 19%, 6%);
@@ -18,172 +17,183 @@
 body {
   background: var(--bg-body);
   font-family: var(--ff-body);
-  font-size: var(--fs-body);
 }
 
 .page {
-  width: 1037px;
-  height: 631px;
-  margin: 66px auto;
-  display: flex;
+  width: 103.7rem;
+  height: 100vh;
+
+  margin: auto;
 }
 
 main {
-  width: 65.619rem;
+  width: 65.6rem;
+  height: 100vh;
+
 
   margin: auto;
 
-  display: grid;
+  display: flex;
+  align-items: center;
   gap: 3.2rem;
-  align-content: center;
-  grid-template-columns: 26.6rem 1fr 35.71rem 1fr; 
-  grid-template-areas: 
-    'PlayerOne PlayerTwo'
-    'PlayerOne PlayerThree';
+
 }
 
 .playerOne {
-  grid-area: PlayerOne;
+  width: 26.6rem;
+  height: 49.8rem;
 
-  width: 266px;
-  height: 498px;
   background: var(--bg-player);
-
-  padding: 50px 38px; 
-
+  color: #E1E1E6;
   border-radius: 8px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2.9rem;
+  padding: 5rem 3.8rem;
 
-  transition: 300ms;
+  animation: downTop 0.5s ease;
+  transition: 0.5s;
 }
 
 .playerOne:hover {
   transform: scale(1.1);
 }
 
+.playerOne > img:nth-child(1) {
+  width: 18.9rem;
+}
+
 h1 {
   font-weight: 700;
-  color: #E1E1E6;
   font-size: 2.4rem;
   line-height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.96rem;
+  margin-top: 2.881rem;
 }
 
-h1 span {
+h2 {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 100%;
-  color: #8e8e90;
+  opacity: 0.5;
+
+  margin-top: 0.96rem;
 }
 
 .control {
-  width: 18.9rem;
-  height: 2.8rem;
+  display: flex;
+  justify-content: space-between;
+
+  margin: 2.881rem 0;
 }
 
-.progress {
-  width: 18.9rem;
-  height: 0.6rem;
-}
-
-.time-progress {
+.time-music {
   font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 160%;
-  color: #8e8e90;
+  font-size: 1.44rem;
+  line-height: 2.3rem;
+  opacity: 0.5;
 
   display: flex;
   justify-content: space-between;
 
-  width: 18.9rem;
-  height: 2.3rem;
+  margin-top: 0.96rem;
+}
 
-  margin-top: -2rem;
+.cards-player {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 }
 
 .playerTwo {
-  grid-area: PlayerTwo;
-
   width: 35.7rem;
   height: 26.6rem;
+
   background: var(--bg-player);
+  color: #E1E1E6;
+  border-radius: 8px;
 
-  padding: 2.9rem;
+  padding: 2.881rem;
 
-  border-radius: 0.9rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.881rem;
-
-  margin: auto;
-
-  transition: 300ms;
+  animation: topDown 0.5s ease;
+  transition: 0.5s;
 }
 
 .playerTwo:hover {
   transform: scale(1.1);
 }
 
-.playerTwo header {
+header {
   display: flex;
   align-items: center;
   gap: 2.881rem;
 }
 
-.playerTwo img:nth-child(1 ) {
+header h1 {
+  margin: 0;
+}
+
+header img {
   width: 8.4rem;
-  height: 8.4rem;
 }
 
-.playerTwo .progress {
-  width: 30rem;
-  height: 0.6rem;
+.cards-player .control {
+  justify-content: space-evenly;
 }
 
-.playerTwo .time-progress{
+.cards-player .bar-progress{
   width: 30rem;
 }
 
 .playerThree {
-  grid-area: PlayerThree;
-
   width: 35.7rem;
-  height: 18.9rem;
+  height: 19.9rem;
+
   background: var(--bg-player);
+  color: #E1E1E6;
+  border-radius: 8px;
 
-  padding: 2.9rem;
+  padding: 2.881rem;
 
-  border-radius: 0.9rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.881rem;
-
-  margin: auto;
-
-  transition: 300ms;
+  animation: rightForLeft 0.5s ease;
+  transition: 0.5s;
 }
 
 .playerThree:hover {
   transform: scale(1.1);
 }
 
-.playerThree header {
-  display: flex;
-  align-items: center;
-  gap: 2.881rem;
+.control img{
+  cursor: pointer;
 }
 
-.playerThree img:nth-child(1 ) {
-  width: 8.4rem;
-  height: 8.4rem;
+@keyframes downTop {
+  0% {
+    transform: translateY(50rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes topDown {
+  0% {
+    transform: translateY(-50rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightForLeft {
+  0% {
+    transform: translateX(50rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
