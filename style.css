@@ -241,7 +241,7 @@ header img {
   }
   main {
     flex-direction: column;
-    width: 100vw;
+    width: 36rem;
     margin-top: 2rem;
   }
 
