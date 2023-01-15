@@ -1,7 +1,8 @@
 let songs = [
+  {titulo:'Shivers', band:'Ed Sheeran', src:'music/Ed Sheeran - Shivers.mp3', cover:'img/edsheeran.png'},
+  {titulo:'1999', band:'Charli XCX feat. Troye Sivan', src:'music/Charli XCX, Troye Sivan - 1999.mp3', cover:'img/charlixcxandtroye.png'},
   {titulo:'Run', band:'Leona Lewis', src:'music/Leona Lewis - Run.mp3', cover:'img/leonalewis.png'},
-  {titulo:'Jar Of Hearts', band:'Christina Perri', src:'music/Christina Perri - Jar Of Hearts.mp3', cover:'img/christinaperri.png'},
-  {titulo:'My Immortal', band:'Evanescence', src:'music/Evanescence - My Immortal.mp3', cover:'img/evanescence.png'}
+  {titulo:'Wicked Game', band:'Chris Isaak', src:'music/Chris Isaak - Wicked Game.mp3', cover:'img/chrisisaak.png'}
 ];
 
 let music = document.querySelector('audio');
