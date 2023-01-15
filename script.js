@@ -8,6 +8,7 @@ let songs = [
 let music = document.querySelector('audio');
 let indexMusic = 0;
 
+
 let durationMusic = document.querySelector('.time-end');
 let image = document.querySelector('.frontCover');
 let nameMusic = document.querySelector('h1');
@@ -17,6 +18,7 @@ initialMusic(indexMusic);
 // Eventos
 document.querySelector('.play-music').addEventListener('click', playMusic);
 document.querySelector('.stop-music').addEventListener('click', stopMusic);
+document.querySelector('.bar').addEventListener('click', setProgress);
 
 document.querySelector('.prev-music').addEventListener('click', () => {
   indexMusic--;
@@ -40,6 +42,7 @@ function playMusic(){
   music.play();
   document.querySelector('.stop-music').style.display = 'block';
   document.querySelector('.play-music').style.display = 'none';
+  console.log(this.clientWidth)
 }
 
 function stopMusic(){
@@ -83,4 +86,10 @@ function renderMusic(index){
     durationMusic.textContent = '0' + convertSegForMin(Math.floor(music.duration));
     playMusic();
   });
+}
+
+function setProgress(e){
+  let width = this.clientWidth;
+  let positionClickX = e.offsetX;
+  music.currentTime = Math.floor((positionClickX / width) * music.duration);
 }
