@@ -30,7 +30,6 @@ main {
   width: 65.6rem;
   height: 100vh;
 
-
   margin: auto;
 
   display: flex;
@@ -242,7 +241,7 @@ header img {
   }
   main {
     flex-direction: column;
-
+    width: 100vw;
     margin-top: 2rem;
   }
 
