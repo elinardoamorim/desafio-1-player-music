@@ -7,18 +7,24 @@ let songs = [
 
 let music = document.querySelector('audio');
 let indexMusic = 0;
-
+let initialVolumeMusic = 0.1;
 
 let durationMusic = document.querySelector('.time-end');
 let image = document.querySelector('.frontCover');
 let nameMusic = document.querySelector('h1');
 let nameBand = document.querySelector('h2');
+let volumeMusic = document.querySelector('.progress-volume');
 
 initialMusic(indexMusic);
+initialVolume(initialVolumeMusic);
+
 // Eventos
 document.querySelector('.play-music').addEventListener('click', playMusic);
 document.querySelector('.stop-music').addEventListener('click', stopMusic);
 document.querySelector('.bar').addEventListener('click', setProgress);
+document.querySelector('.volume-music').addEventListener('mouseover', controlVolumeTrue);
+document.querySelector('.volume-music').addEventListener('mouseout', controlVolumeFalse);
+document.querySelector('.bar-volume').addEventListener('click', setProgressVolume);
 
 document.querySelector('.prev-music').addEventListener('click', () => {
   indexMusic--;
@@ -42,13 +48,19 @@ function playMusic(){
   music.play();
   document.querySelector('.stop-music').style.display = 'block';
   document.querySelector('.play-music').style.display = 'none';
-  console.log(this.clientWidth)
 }
 
 function stopMusic(){
   music.pause();
   document.querySelector('.play-music').style.display = 'block';
   document.querySelector('.stop-music').style.display = 'none';
+}
+
+function controlVolumeTrue(){
+  document.querySelector('.line-volume').style.display = 'block';
+}
+function controlVolumeFalse(){
+  document.querySelector('.line-volume').style.display = 'none';
 }
 
 function updateBar(){
@@ -77,6 +89,12 @@ function initialMusic(index){
   });
 }
 
+function initialVolume(initialVolumeMusic){
+  music.volume = initialVolumeMusic;
+  let volumeMusic = document.querySelector('.progress-volume');
+  volumeMusic.style.width = music.volume * 100 + '%';
+}
+
 function renderMusic(index){
   music.setAttribute('src', songs[index].src);
   music.addEventListener('loadeddata', () => {
@@ -92,4 +110,12 @@ function setProgress(e){
   let width = this.clientWidth;
   let positionClickX = e.offsetX;
   music.currentTime = Math.floor((positionClickX / width) * music.duration);
+}
+
+function setProgressVolume(e){
+  let width = this.clientWidth;
+  let positionClickX = e.offsetX;
+  music.volume = Math.floor((positionClickX / width) * 100) / 100;
+  let volumeMusic = document.querySelector('.progress-volume');
+  volumeMusic.style.width = Math.floor((positionClickX / width) * 100) + '%';
 }
