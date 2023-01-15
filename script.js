@@ -1,6 +1,6 @@
 let songs = [
   {titulo:'Shivers', band:'Ed Sheeran', src:'music/Ed Sheeran - Shivers.mp3', cover:'img/edsheeran.png'},
-  {titulo:'1999', band:'Charli XCX feat. Troye Sivan', src:'music/Charli XCX, Troye Sivan - 1999.mp3', cover:'img/charlixcxandtroye.png'},
+  {titulo:'1999', band:'Charli XCX', src:'music/Charli XCX, Troye Sivan - 1999.mp3', cover:'img/charlixcxandtroye.png'},
   {titulo:'Run', band:'Leona Lewis', src:'music/Leona Lewis - Run.mp3', cover:'img/leonalewis.png'},
   {titulo:'Wicked Game', band:'Chris Isaak', src:'music/Chris Isaak - Wicked Game.mp3', cover:'img/chrisisaak.png'}
 ];
